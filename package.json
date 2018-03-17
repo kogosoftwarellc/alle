@@ -1,0 +1,34 @@
+{
+  "name": "alle",
+  "version": "0.0.0",
+  "description": "Monorepo management inspired by boennemann.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test-watch": "jest --watch"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-context/setup"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kogosoftwarellc/alle.git"
+  },
+  "keywords": [
+    "monorepo",
+    "management"
+  ],
+  "author": "Kogo Software LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kogosoftwarellc/alle/issues"
+  },
+  "homepage": "https://github.com/kogosoftwarellc/alle#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "jest": "^22.4.2",
+    "jest-context": "^2.1.0"
+  }
+}
