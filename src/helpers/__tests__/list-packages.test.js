@@ -1,11 +1,16 @@
-import path from 'path';
+import path from "path";
+import constants from "__fixtures__/constants";
+import listPackages from "../list-packages";
 
-const repoDirWithNoPackages = path.resolve(__dirname, '../../../__fixtures__/no-package.json');
-
-describe('listPackages', () => {
-  context('when given a repo directory with no valid packages', () => {
-    it('should return an empty array', () => {
-
+describe("listPackages", () => {
+  [
+    ["when given a repo with a valid package", constants.repoValid, 1],
+    ["when given a repo with no packages", constants.repoValidNoPackages, 0]
+  ].forEach(test => {
+    context(test[0], () => {
+      it(`should return ${test[2]}`, () => {
+        expect(listPackages(test[1]).length).toBe(test[2]);
+      });
     });
   });
 });
