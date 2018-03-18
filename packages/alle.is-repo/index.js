@@ -7,7 +7,7 @@ export default function isRepo(repoDir) {
   try {
     return (
       isDir.sync(repoDir) &&
-      isDir.sync(path.resolve(repoDir, "packages", "node_modules")) &&
+      isDir.sync(path.resolve(repoDir, "packages")) &&
       isFile.sync(repoPackageJson) &&
       !!require(repoPackageJson)
     );

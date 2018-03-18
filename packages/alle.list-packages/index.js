@@ -1,10 +1,10 @@
 import path from "path";
 import fs from "fs";
 import isDir from "is-dir";
-import isPackage from "./is-package";
+import isPackage from "alle.is-package";
 
 export default function listPackages(repoDir) {
-  const packagesDir = path.resolve(repoDir, "packages", "node_modules");
+  const packagesDir = path.resolve(repoDir, "packages");
   if (!isDir.sync(packagesDir)) {
     return [];
   }

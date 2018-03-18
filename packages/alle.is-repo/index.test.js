@@ -1,6 +1,6 @@
 import path from "path";
 import constants from "__fixtures__/constants";
-import isRepo from "../is-repo";
+import isRepo from "alle.is-repo";
 
 describe("isRepo", () => {
   [

@@ -3,14 +3,19 @@
   "version": "0.0.0",
   "description": "Monorepo management inspired by boennemann.",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "pretest": "eslint .",
-    "test": "NODE_PATH=. jest --coverage",
-    "test-watch": "NODE_PATH=. jest --watch"
+    "test": "NODE_PATH='.:packages' jest --coverage",
+    "test-watch": "NODE_PATH='.:packages' jest --watch"
   },
   "jest": {
     "setupFiles": [
       "jest-context/setup"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/__fixtures__/.*",
+      "<rootDir>/node_modules/.*"
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/__fixtures__/.*"

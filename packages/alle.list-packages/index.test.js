@@ -1,6 +1,6 @@
 import path from "path";
 import constants from "__fixtures__/constants";
-import listPackages from "../list-packages";
+import listPackages from "alle.list-packages";
 
 describe("listPackages", () => {
   [

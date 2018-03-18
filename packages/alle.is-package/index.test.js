@@ -1,6 +1,6 @@
 import path from "path";
 import constants from "__fixtures__/constants";
-import isPackage from "../is-package";
+import isPackage from "alle.is-package";
 
 describe("isPackage", () => {
   [

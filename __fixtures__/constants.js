@@ -6,7 +6,6 @@ export default {
     "sample-repos",
     "valid-repo-invalid-package",
     "packages",
-    "node_modules",
     "foo-package"
   ),
   packageValid: path.resolve(
@@ -14,7 +13,6 @@ export default {
     "sample-repos",
     "valid-repo",
     "packages",
-    "node_modules",
     "foo-package"
   ),
   repoInValidPackageJson: path.resolve(
