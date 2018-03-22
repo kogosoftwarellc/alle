@@ -4,8 +4,30 @@ import isPackage from "alle.is-package";
 
 describe("isPackage", () => {
   [
-    ["when given a valid package", constants.packageValid, true],
-    ["when given an invalid package", constants.packageInValid, false]
+    [
+      "when given a valid package",
+      {
+        expectedName: "foo-package",
+        packageDir: constants.packageValid
+      },
+      true
+    ],
+    [
+      "when given an invalid package",
+      {
+        expectedName: "foo-package",
+        packageDir: constants.packageInValid
+      },
+      false
+    ],
+    [
+      "when given a mismatched package",
+      {
+        packageDir: constants.packageNameMisMatch,
+        expectedName: "foo-package"
+      },
+      false
+    ]
   ].forEach(test => {
     context(test[0], () => {
       it(`should return ${test[2]}`, () => {

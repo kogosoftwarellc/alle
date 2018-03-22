@@ -8,6 +8,13 @@ export default {
     "packages",
     "foo-package"
   ),
+  packageNameMisMatch: path.resolve(
+    __dirname,
+    "sample-repos",
+    "valid-repo-mismatch-package-name",
+    "packages",
+    "foo-package"
+  ),
   packageValid: path.resolve(
     __dirname,
     "sample-repos",
