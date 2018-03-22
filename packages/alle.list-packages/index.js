@@ -8,8 +8,33 @@ export default function listPackages(repoDir) {
   if (!isDir.sync(packagesDir)) {
     return [];
   }
+  const pkgs = [];
 
-  return fs
-    .readdirSync(packagesDir)
-    .filter(pkg => isPackage(path.resolve(packagesDir, pkg)));
+  const packagesListing = fs.readdirSync(packagesDir);
+
+  packagesListing.filter(entry => entry[0] === "@").forEach(scope => {
+    fs
+      .readdirSync(path.resolve(packagesDir, scope))
+      .map(pkg => ({
+        expectedName: `${scope}/${pkg}`,
+        packageDir: path.resolve(packagesDir, scope, pkg)
+      }))
+      .filter(isPackage)
+      .forEach(pkg => {
+        pkgs.push(pkg);
+      });
+  });
+
+  packagesListing
+    .filter(entry => entry[0] !== "@")
+    .map(pkg => ({
+      expectedName: `${pkg}`,
+      packageDir: path.resolve(packagesDir, pkg)
+    }))
+    .filter(isPackage)
+    .forEach(pkg => {
+      pkgs.push(pkg);
+    });
+
+  return pkgs;
 }

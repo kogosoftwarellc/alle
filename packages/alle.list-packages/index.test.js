@@ -4,7 +4,7 @@ import listPackages from "alle.list-packages";
 
 describe("listPackages", () => {
   [
-    ["when given a repo with a valid package", constants.repoValid, 1],
+    ["when given a repo with a valid package", constants.repoValid, 2],
     ["when not given a directory", "/", 0],
     ["when given a repo with no packages", constants.repoValidNoPackages, 0]
   ].forEach(test => {
