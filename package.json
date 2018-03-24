@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "pretest": "eslint .",
     "test": "NODE_PATH='.:packages' jest --coverage",
     "test-watch": "NODE_PATH='.:packages' jest --watch"
@@ -52,6 +53,7 @@
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.1",
     "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
     "eslint": "^4.19.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.9.0",
