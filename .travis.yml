@@ -9,3 +9,4 @@ notifications:
     on_success: "never"
 script:
   - "npm t"
+  - "npm run coveralls"
