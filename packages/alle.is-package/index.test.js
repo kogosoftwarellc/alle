@@ -27,6 +27,14 @@ describe("isPackage", () => {
         expectedName: "foo-package"
       },
       false
+    ],
+    [
+      "when given a package with no version",
+      {
+        packageDir: constants.packageNoVersionInPackage,
+        expectedName: "foo-package"
+      },
+      false
     ]
   ].forEach(test => {
     context(test[0], () => {

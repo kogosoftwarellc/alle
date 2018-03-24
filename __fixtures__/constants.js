@@ -15,6 +15,13 @@ export default {
     "packages",
     "foo-package"
   ),
+  packageNoVersionInPackage: path.resolve(
+    __dirname,
+    "sample-repos",
+    "valid-repo-no-version-in-package",
+    "packages",
+    "foo-package"
+  ),
   packageValid: path.resolve(
     __dirname,
     "sample-repos",
