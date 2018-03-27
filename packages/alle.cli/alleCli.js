@@ -1,6 +1,5 @@
 const chalk = require("chalk");
 const commander = require("commander");
-const init = require("./commands/init");
 const packageJson = require("../../package.json");
 
 process.on("unhandledRejection", err => {
@@ -21,36 +20,27 @@ program
   .command("init [dir]")
   .description(
     `Creates a basic alle monorepo structure in the current directory if no directory name is given.`
-  )
-  .action(init);
+  );
 
-program
-  .command("install")
-  .description(
-    `Runs npm i in each of the package directories (when dependencies are defined therein) and the
+program.command("install").description(
+  `Runs npm i in each of the package directories (when dependencies are defined therein) and the
                        repo directory. Creates the symlink packages/node_modules -> packages/ to allow packages to 
                        reference each other.`
-  )
-  .action(() => console.log("you entered install"));
+);
 
-program
-  .command("publish [packages...]")
-  .description(
-    `Publish each of the packages given. If no packages are given, the packages directory 
+program.command("publish [packages...]").description(
+  `Publish each of the packages given. If no packages are given, the packages directory 
                        would be scanned for packages and the user would be prompted in the 
                        terminal to choose which available packages they'd like to publish`
-  )
-  .action(packages => console.log(`you entered publish ${packages}`));
+);
 
 program
   .command("run <command...>")
-  .description(`Runs the command in each of the packages`)
-  .action(() => console.log("you entered run"));
+  .description(`Runs the command in each of the packages`);
 
 program
   .command("test")
   .alias("t")
-  .description("Alias for alle run npm t")
-  .action(() => console.log("you entered test"));
+  .description("Alias for alle run npm t");
 
 program.parse(process.argv);
