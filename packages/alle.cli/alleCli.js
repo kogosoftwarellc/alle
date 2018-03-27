@@ -31,7 +31,7 @@ program
                        repo directory. Creates the symlink packages/node_modules -> packages/ to allow packages to 
                        reference each other.`
   )
-  .action(() => console.log("you entered install"));
+  .action();
 
 program
   .command("publish [packages...]")
@@ -40,17 +40,17 @@ program
                        would be scanned for packages and the user would be prompted in the 
                        terminal to choose which available packages they'd like to publish`
   )
-  .action(packages => console.log(`you entered publish ${packages}`));
+  .action();
 
 program
   .command("run <command...>")
   .description(`Runs the command in each of the packages`)
-  .action(() => console.log("you entered run"));
+  .action();
 
 program
   .command("test")
   .alias("t")
   .description("Alias for alle run npm t")
-  .action(() => console.log("you entered test"));
+  .action();
 
 program.parse(process.argv);
