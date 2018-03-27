@@ -68,7 +68,6 @@
     "jest": "^22.4.2",
     "jest-context": "^2.1.0",
     "prettier": "^1.11.1",
-    "tempy": "^0.2.1",
     "validate-npm-package-name": "^3.0.0"
   },
   "dependencies": {
