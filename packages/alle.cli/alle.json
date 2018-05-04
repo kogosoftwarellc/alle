@@ -1,4 +1,7 @@
 {
-  "name": "alle.cli", 
-  "version": "0.0.0"
+  "name": "alle.cli",
+  "version": "0.0.0",
+  "bin": {
+    "alle": "./alle.js"
+  }
 }

@@ -1,0 +1,10 @@
+#! /usr/bin/env node
+"use strict";
+
+const program = require("commander");
+const alleJson = require("./alle.json");
+
+program
+  .version(alleJson.version)
+  .description(`Runs the command in each of the packages`)
+  .parse(process.argv);
