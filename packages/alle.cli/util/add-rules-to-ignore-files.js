@@ -16,6 +16,7 @@ module.exports = function handleIgnoreFiles(dir) {
       file: gitignore,
       rules: [
         [/^packages\/\*\/package\.json$/gm, "packages/*/package.json"],
+        [/^packages\/node_modules$/gm, "packages/node_modules"],
         [/^packages\/\*\/package-lock\.json$/gm, "packages/*/package-lock.json"]
       ]
     });

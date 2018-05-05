@@ -8,6 +8,7 @@ const resolve = path.resolve;
 const mkdirp = require("mkdirp");
 const addRulesToIgnoreFiles = require("./util/add-rules-to-ignore-files");
 const setRepoPackageJson = require("./util/set-repo-package-json");
+const fs = require("fs-extra");
 
 program
   .version(alleJson.version)
@@ -17,8 +18,12 @@ program
   )
   .action(dir => {
     dir = resolve(process.cwd(), dir);
-    mkdirp.sync(dir);
-    mkdirp.sync(resolve(dir, "packages"));
+    // creates dir, packages dir
+    fs.ensureSymlinkSync(
+      resolve(dir, "packages"),
+      resolve(dir, "packages", "node_modules")
+    );
+
     addRulesToIgnoreFiles(dir);
     setRepoPackageJson(dir);
   })
