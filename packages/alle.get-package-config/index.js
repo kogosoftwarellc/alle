@@ -1,10 +1,10 @@
-import path from "path";
+const path = require("path");
 
-export default function getPackageConfig(packageDir) {
+module.exports = function getPackageConfig(packageDir) {
   console.log(path.resolve(packageDir, "alle.json"));
   try {
     return require(path.resolve(packageDir, "alle.json"));
   } catch (e) {
     return null;
   }
-}
+};

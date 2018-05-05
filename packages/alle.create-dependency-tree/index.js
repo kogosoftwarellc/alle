@@ -1,4 +1,4 @@
-export default function createDependencyTree(packages) {
+module.exports = function createDependencyTree(packages) {
   const tree = {};
   if (!Array.isArray(packages) || !packages.length) {
     return tree;
@@ -20,4 +20,4 @@ export default function createDependencyTree(packages) {
   });
 
   return tree;
-}
+};

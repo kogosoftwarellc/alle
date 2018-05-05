@@ -1,7 +1,7 @@
-import isDir from "is-dir";
-import path from "path";
+const isDir = require("is-dir");
+const path = require("path");
 
-export default function isPackage(pkg) {
+module.exports = function isPackage(pkg) {
   try {
     const packageDir = pkg.packageDir;
     const config = require(path.resolve(packageDir, "alle.json"));
@@ -13,4 +13,4 @@ export default function isPackage(pkg) {
   } catch (e) {
     return false;
   }
-}
+};
