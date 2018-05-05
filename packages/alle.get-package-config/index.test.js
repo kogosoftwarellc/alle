@@ -1,5 +1,5 @@
-import constants from "__fixtures__/constants";
-import getPackageConfig from "alle.get-package-config";
+const constants = require("__fixtures__/constants");
+const getPackageConfig = require("alle.get-package-config");
 
 describe("getPackageConfig", () => {
   [

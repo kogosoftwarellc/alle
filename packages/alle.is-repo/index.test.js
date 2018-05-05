@@ -1,6 +1,6 @@
-import path from "path";
-import constants from "__fixtures__/constants";
-import isRepo from "alle.is-repo";
+const path = require("path");
+const constants = require("__fixtures__/constants");
+const isRepo = require("alle.is-repo");
 
 describe("isRepo", () => {
   [

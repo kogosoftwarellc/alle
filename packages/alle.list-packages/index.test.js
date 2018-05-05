@@ -1,6 +1,6 @@
-import path from "path";
-import constants from "__fixtures__/constants";
-import listPackages from "alle.list-packages";
+const path = require("path");
+const constants = require("__fixtures__/constants");
+const listPackages = require("alle.list-packages");
 
 describe("listPackages", () => {
   [

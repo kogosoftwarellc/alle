@@ -1,4 +1,4 @@
-import createDependencyTree from "alle.create-dependency-tree";
+const createDependencyTree = require("alle.create-dependency-tree");
 
 describe("createDependencyTree", () => {
   [

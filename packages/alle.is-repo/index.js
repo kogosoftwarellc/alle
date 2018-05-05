@@ -1,8 +1,8 @@
-import isDir from "is-dir";
-import isFile from "is-file";
-import path from "path";
+const isDir = require("is-dir");
+const isFile = require("is-file");
+const path = require("path");
 
-export default function isRepo(repoDir) {
+module.exports = function isRepo(repoDir) {
   const repoPackageJson = path.resolve(repoDir, "package.json");
   try {
     return (
@@ -14,4 +14,4 @@ export default function isRepo(repoDir) {
   } catch (e) {
     return false;
   }
-}
+};

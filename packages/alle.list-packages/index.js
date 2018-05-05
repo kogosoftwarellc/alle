@@ -1,9 +1,9 @@
-import path from "path";
-import fs from "fs";
-import isDir from "is-dir";
-import isPackage from "alle.is-package";
+const path = require("path");
+const fs = require("fs");
+const isDir = require("is-dir");
+const isPackage = require("alle.is-package");
 
-export default function listPackages(repoDir) {
+module.exports = function listPackages(repoDir) {
   const packagesDir = path.resolve(repoDir, "packages");
   if (!isDir.sync(packagesDir)) {
     return [];
@@ -37,4 +37,4 @@ export default function listPackages(repoDir) {
     });
 
   return pkgs;
-}
+};
