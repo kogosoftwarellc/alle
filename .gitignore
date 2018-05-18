@@ -60,3 +60,4 @@ typings/
 
 packages/*/package.json
 packages/*/package-lock.json
+packages/node_modules
