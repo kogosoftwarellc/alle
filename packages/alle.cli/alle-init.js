@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 "use strict";
 
 const program = require("commander");
@@ -12,19 +12,17 @@ const fs = require("fs-extra");
 
 program
   .version(alleJson.version)
-  .arguments("[dir]")
+  .arguments("[dir...]")
   .description(
     `Creates a basic alle monorepo structure in the current directory if no directory is given.`
   )
-  .action(dir => {
-    dir = resolve(process.cwd(), dir);
-    // creates dir, packages dir
-    fs.ensureSymlinkSync(
-      resolve(dir, "packages"),
-      resolve(dir, "packages", "node_modules")
-    );
-
-    addRulesToIgnoreFiles(dir);
-    setRepoPackageJson(dir);
-  })
   .parse(process.argv);
+
+program.args.forEach(dir => {
+  dir = resolve(process.cwd(), dir);
+  const packagesDir = resolve(dir, "packages");
+  mkdirp.sync(packagesDir);
+  fs.ensureSymlinkSync(packagesDir, resolve(packagesDir, "node_modules"));
+  addRulesToIgnoreFiles(dir);
+  setRepoPackageJson(dir);
+});
