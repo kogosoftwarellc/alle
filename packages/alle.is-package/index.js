@@ -1,10 +1,11 @@
 const isDir = require("is-dir");
 const path = require("path");
+const getPackageConfig = require("alle.get-package-config");
 
 module.exports = function isPackage(pkg) {
   try {
     const packageDir = pkg.packageDir;
-    const config = require(path.resolve(packageDir, "alle.json"));
+    const config = getPackageConfig(packageDir);
     return (
       isDir.sync(packageDir) &&
       !!config.version &&

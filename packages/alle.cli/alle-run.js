@@ -8,7 +8,4 @@ program
   .version(alleJson.version)
   .arguments("[dir]")
   .description(`Runs the command in each of the packages`)
-  .action(() => {
-    console.log("foooo");
-  })
   .parse(process.argv);

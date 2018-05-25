@@ -68,6 +68,7 @@
     "is-dir": "^1.0.0",
     "is-file": "^1.0.0",
     "lodash.flowright": "^3.5.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "tree-stringify": "^1.1.0"
   }
 }
