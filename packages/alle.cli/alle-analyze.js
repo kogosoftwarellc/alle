@@ -14,7 +14,7 @@ program
 
 const packages = listPackages(process.cwd()).reduce(
   (output, pkg, i, pkgs) => {
-    const config = getPackageConfig(pkg.packageDir);
+    const config = getPackageConfig(pkg.packageDir).config;
     output.packages[`${pkg.expectedName}@${config.version}`] = Object.keys(
       config.dependencies || {}
     )

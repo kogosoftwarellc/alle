@@ -5,7 +5,7 @@ const getPackageConfig = require("alle.get-package-config");
 module.exports = function isPackage(pkg) {
   try {
     const packageDir = pkg.packageDir;
-    const config = getPackageConfig(packageDir);
+    const config = getPackageConfig(packageDir).config;
     return (
       isDir.sync(packageDir) &&
       !!config.version &&

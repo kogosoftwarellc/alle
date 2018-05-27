@@ -10,6 +10,7 @@ program
     "Monorepo management inspired by https://github.com/boennemann/alle"
   )
   .command("analyze", "Outputs an analysis of package inter-dependencies")
+  .command("bump", "Bumps monorepo package versions in dependencies")
   .command("init [dir...]", "Initialize an alle monorepo")
   .command("install", "Installs dependencies")
   .command("publish [packageName...]", "Publishes packages")

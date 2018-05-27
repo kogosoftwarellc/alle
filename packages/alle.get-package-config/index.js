@@ -2,10 +2,18 @@ const path = require("path");
 
 module.exports = function getPackageConfig(packageDir) {
   try {
-    return require(path.resolve(packageDir, "alle.json"));
+    const configPath = path.resolve(packageDir, "alle.json");
+    return {
+      path: configPath,
+      config: require(configPath)
+    };
   } catch (e) {
+    const configPath = path.resolve(packageDir, "package.json");
     try {
-      return require(path.resolve(packageDir, "package.json"));
+      return {
+        path: configPath,
+        config: require(configPath)
+      };
     } catch (ep) {
       return null;
     }
